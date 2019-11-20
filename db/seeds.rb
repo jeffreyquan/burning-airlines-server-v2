@@ -4,9 +4,9 @@ p2 = Plane.create :name => 'Airbus A380', :rows => 15, :columns => 4
 puts "#{ Plane.count } planes created."
 
 User.destroy_all
-u1 = User.create :name => 'Jeffrey', :email => 'jeffrey@ga.co', :password => 'chicken', :admin => true
-u2 = User.create :name => 'Nick', :email => 'nick@ga.co', :password => 'chicken', :admin => false
-u3 = User.create :name => 'Kian', :email => 'kian@ga.co', :password => 'chicken', :admin => false
+u1 = User.create :name => 'Jeffrey', :email => 'jeffrey@ga.co', :admin => true
+u2 = User.create :name => 'Nick', :email => 'nick@ga.co', :admin => false
+u3 = User.create :name => 'Kian', :email => 'kian@ga.co', :admin => false
 puts "#{ User.count } users created."
 
 Flight.destroy_all
@@ -19,12 +19,12 @@ f6 = Flight.create :flight_no => 'TQ33', :origin => 'London', :destination => 'S
 puts "#{ Flight.count } flights created."
 
 Reservation.destroy_all
-r1 = Reservation.create :row_no => 2, :col_no => 3
-r2 = Reservation.create :row_no => 4, :col_no => 2
-r3 = Reservation.create :row_no => 5, :col_no => 1
-r4 = Reservation.create :row_no => 4, :col_no => 1
-r5 = Reservation.create :row_no => 1, :col_no => 2
-r6 = Reservation.create :row_no => 6, :col_no => 3
+r1 = Reservation.create :row => 2, :column => 3
+r2 = Reservation.create :row => 4, :column => 2
+r3 = Reservation.create :row => 5, :column => 1
+r4 = Reservation.create :row => 4, :column => 1
+r5 = Reservation.create :row => 1, :column => 2
+r6 = Reservation.create :row => 6, :column => 3
 
 f1.reservations << r1 << r2
 f2.reservations << r3 << r4
