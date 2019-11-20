@@ -1,4 +1,4 @@
 *ignore log
- /log/*
- #ignor tmp files
- /tmp/*
+/log/*
+#ignore tmp files
+/tmp/*
