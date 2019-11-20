@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :reservations
   resources :flights
   resources :planes
+  
 end
