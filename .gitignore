@@ -1,0 +1,4 @@
+*ignore log
+ /log/*
+ #ignor tmp files
+ /tmp/*
