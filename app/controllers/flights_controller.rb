@@ -4,7 +4,12 @@ class FlightsController < ApplicationController
   # GET /flights
   # GET /flights.json
   def index
-    @flights = Flight.all
+    @flights = Flight.where(nil)
+
+    filter_params(params).each do |key, value|
+      @flights = @flights.public_send(key, value) if value.present?
+    end
+
   end
 
   # GET /flights/1
@@ -70,5 +75,9 @@ class FlightsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def flight_params
       params.require(:flight).permit(:flight_no, :origin, :destination, :date, :plane_id)
+    end
+
+    def filter_params(params)
+      params.slice(:origin, :destination)
     end
 end
