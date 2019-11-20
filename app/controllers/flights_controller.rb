@@ -6,8 +6,8 @@ class FlightsController < ApplicationController
   def index
     @flights = Flight.where(nil)
 
-    filter_params(params).each do |k, v|
-      @flights = @flights.public_send(k, v) if v.present?
+    filter_params(params).each do |key, value|
+      @flights = @flights.public_send(key, value) if value.present?
     end
 
   end
