@@ -16,7 +16,7 @@ class FlightsController < ApplicationController
   # GET /flights/1.json
   def show
     @flight = Flight.find params[:id]
-    render json: @flight
+    render json: @flight, :include => [:plane, {:reservations => {:include => :user}}]
   end
 
   # GET /flights/new
